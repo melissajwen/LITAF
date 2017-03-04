@@ -1,15 +1,84 @@
 <!--Welcome page which redirects to form creation page --> 
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<h1>Welcome</h1>
-<form action="form.html">
-    <input type="submit" value="Go to Google" />
-</form></head>
-<body>
+	<title>Welcome to TextGrader!</title>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<script>
+		$(document).ready(function(){
+		    $("#header").fadeIn(3000);
+		});
+	</script>
+</head>
+<style>
+	.button {
+        opacity: 0.96;
+        border-radius:10px;
+        display:inline-block;
+        cursor:pointer;
+        color: white;
 
+        font-size:20px;
+        padding:13px 12px;
+        text-decoration: none;
+        
+        transition: all 0.3s ease-in-out;
+      }
+
+      .button:hover {
+          transform: scale(1.01);
+          background-color: ;
+          color: white;
+      }
+</style>
+<body class="text-center">
+
+	<div class="jumbotron text-center">
+		<h1>Welcome to TextGrader.</h1>
+	  	<p>The grading system of the future.</p> 
+	</div>
+	  
+	<div class="container">
+		<div class="row">
+	    	<div class="col-sm-4">
+		      	<h3>Column 1</h3>
+		      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+		      	<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+		    </div>
+		    <div class="col-sm-4">
+		      	<h3>Column 2</h3>
+		      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+		      	<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+		    </div>
+		    <div class="col-sm-4">
+		      	<h3>Column 3</h3>        
+		      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+		      	<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+		    </div>
+	  	</div>
+	</div>
+	</br></br></br>
+
+	<div class = "jumbotron text-center">
+		<div id = startButton>
+			</br><button id = "button" class = "text-center btn btn-info button">Create your own form!</button>
+		</div>
+
+		<script>
+		    document.getElementById('button').addEventListener('click', function() {
+		    	setTimeout(function() {
+		    		window.location.href = "masterform.html";
+		    	}, 0);
+		    });
+		</script>
+		</br></br>
+	</div>
+	
 
 </body>
-
 </html>
