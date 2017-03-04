@@ -19,11 +19,14 @@ function compareKeywords(userArray, teacherArray){
             newWords.push(userArray[i]);
         }
     }
+    var percentageMatched = matchedWordCount/teacherArray.size;
     return {
         newWords: newWords,
         newWordCount: newWordCount,
         matchedWords: matchedWords,
         matchedWordCount: matchedWordCount
+        percentageMatched: percentageMatched
     };
 }
 
+function
