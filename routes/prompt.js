@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
+var Answer = require('../models/Answer');
 var Prompt = require('../models/Prompt');
 
 /* Display form for creating a new prompt */
@@ -72,10 +73,24 @@ router.get('/:id/:master', function(req, res) {
     } else {
       // Only show master page if the provided master key is equal to the one stored in the database
       if (prompt.master_key === req.params.master) {
-        res.render('../views/prompt/master', {
-          id: prompt._id,
-          question: prompt.question,
-          answer: prompt.answer,
+        // Get currently submitted student answers
+        Answer.find({'prompt': req.params.id}, function(err, answers) {
+          if (err) {
+            // Set locals, only providing error in development
+            res.locals.message = err.message;
+            res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+            // Render the error page with status code of 500
+            res.status(err.status || 500);
+            res.render('../views/error');
+          } else {
+            res.render('../views/prompt/master', {
+              id: prompt._id,
+              question: prompt.question,
+              answer: prompt.answer,
+              student_answers: answers
+            });
+          }
         })
       } else {
         // If the master key provided isn't the one in the database, let them know they're not authorized
