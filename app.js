@@ -10,6 +10,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 /* MongoDB set up */
 var mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
 db = process.env.DB_URI;
 mongoose.connect(db);
 
@@ -29,9 +30,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 /* Import routes */
 var index = require('./routes/index');
 var prompt = require('./routes/prompt');
+var answer = require('./routes/answer');
 
 app.use('/', index);
 app.use('/prompt', prompt);
+app.use('/answer', answer);
 
 /* Error Handler */
 app.use(function(err, req, res, next) {
