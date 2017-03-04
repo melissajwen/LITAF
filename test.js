@@ -22,3 +22,14 @@
             alert("error");
         });
     });
+
+function postrequest() {
+    $.ajax({
+        type: "POST",
+        url: "https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/keyphrases",
+        headers: {"Ocp-Apim-Subscription-Key": "your_api_key", "Content-Type": "application/json", "Accept": "application/json"}
+        data: data,
+        success: success,
+        dataType: dataType
+    });
+}
