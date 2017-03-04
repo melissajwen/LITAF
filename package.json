@@ -1,20 +1,14 @@
- {
-     "documents": [
-         {
-             "id": "1",
-             "text": "First document"
-         },
-         
-         {
-             "id": "100",
-             "text": "Final document"
-         }
-     ],
-     "stopWords": [
-         "issue", "error", "user"
-     ],
-     "stopPhrases": [
-         "Microsoft", "Azure"
-     ]
- }
-
+{
+  "name": "shortanswers",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "express": "^4.14.1",
+    "mongoose": "^4.8.5",
+    "pug": "^2.0.0-beta11"
+  }
+}
