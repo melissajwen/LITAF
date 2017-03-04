@@ -1,7 +1,10 @@
 var mongoose = require('mongoose');
 
 var AnswerSchema = new mongoose.Schema({
-  prompt: ObjectId,
+  prompt: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Prompt'
+  },
   name: String,
   answer: String,
   est_grade: Number

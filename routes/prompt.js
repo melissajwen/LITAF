@@ -45,6 +45,7 @@ router.get('/:id', function(req, res) {
       if (prompt) {
         // If we find a prompt, show the default view to users
         res.render('../views/prompt/show', {
+          id: prompt._id,
           question: prompt.question,
           answer: prompt.answer
         });
@@ -72,8 +73,9 @@ router.get('/:id/:master', function(req, res) {
       // Only show master page if the provided master key is equal to the one stored in the database
       if (prompt.master_key === req.params.master) {
         res.render('../views/prompt/master', {
+          id: prompt._id,
           question: prompt.question,
-          answer: prompt.answer
+          answer: prompt.answer,
         })
       } else {
         // If the master key provided isn't the one in the database, let them know they're not authorized
