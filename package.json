@@ -1,0 +1,20 @@
+ {
+     "documents": [
+         {
+             "id": "1",
+             "text": "First document"
+         },
+         
+         {
+             "id": "100",
+             "text": "Final document"
+         }
+     ],
+     "stopWords": [
+         "issue", "error", "user"
+     ],
+     "stopPhrases": [
+         "Microsoft", "Azure"
+     ]
+ }
+
