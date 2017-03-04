@@ -6,3 +6,9 @@ block content
     hr
     h2 Question: #{question}
     p.lead Answer: #{answer}
+
+    h3 Student Answers
+    each ans in student_answers
+      div
+        h4= ans.name
+        p= ans.answer
