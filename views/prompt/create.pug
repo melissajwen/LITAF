@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+  div(class='container text-center')
+    h1 Form for Short Answer Prompt
+
+    div(class='col-md-8 col-md-offset-2')
+      form(method='POST' action='/prompt/new')
+        div.form-group
+          label(for='question') Question/Prompt:
+          input#question.form-control(type='text', placeholder='Explain the causes for why the Union won the American Civil War' name='question')
+        div.form-group
+          label(for='answer') Ideal Answer:
+          textarea#answer.form-control(type='text', placeholder='The Union won the American Civil War because...' name='answer')
+        button.btn.btn-primary(type='submit') Create Prompt

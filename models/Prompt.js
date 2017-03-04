@@ -6,4 +6,12 @@ var PromptSchema = new mongoose.Schema({
   master_key: String
 });
 
+// Define a pre-save method for categorySchema
+PromptSchema.pre('save', function(next) {
+  // Assign a random master key to the Prompt
+  var self = this;
+  self.master_key = Math.random().toString(36).slice(2);
+  next();
+});
+
 module.exports = mongoose.model('Prompt', PromptSchema);

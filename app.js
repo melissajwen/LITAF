@@ -1,7 +1,17 @@
 /* Express Setup */
 var express = require('express');
 var path = require('path');
-require('dotenv').config()
+var bodyParser = require('body-parser');
+
+// If we're NOT in production, load in environment variables (like the database URI) from the .env file
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config() // For use in development to load in configuration variables (like the database URI)
+}
+
+/* MongoDB set up */
+var mongoose = require('mongoose');
+db = process.env.DB_URI;
+mongoose.connect(db);
 
 var app = express();
 
@@ -11,13 +21,17 @@ app.set('port', (process.env.PORT || 3001));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-/* Static file serving */
-app.use(express.static(path.join(__dirname, 'public')));
+/* Middleware setup */
+app.use(express.static(path.join(__dirname, 'public'))); // Static file serving
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
-/* Basic Routes (TEMP) */
-app.get('/', function(req, res) {
-  res.render('index');
-});
+/* Import routes */
+var index = require('./routes/index');
+var prompt = require('./routes/prompt');
+
+app.use('/', index);
+app.use('/prompt', prompt);
 
 /* Error Handler */
 app.use(function(err, req, res, next) {
