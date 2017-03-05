@@ -1,0 +1,49 @@
+.jumbotron {
+  padding: 100px 0;
+  background: #333333;
+}
+
+.jumbotron h1, .jumbotron p {
+  color: #FFFFFF;
+}
+
+.welcome {
+  padding: 50px 0;
+}
+
+.welcome-icon {
+  font-size: 3.5em;
+}
+
+.welcome-icon i {
+  color: #3743E6;
+}
+
+.cta {
+  margin: 0;
+}
+
+.btn-cta {
+  opacity: 0.96;
+  border-radius: 10px;
+  display: inline-block;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  padding: 13px 12px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  background: #3743E6;
+  border: 1px solid #2733DB;
+}
+
+.btn-cta:hover {
+  transform: scale(1.01);
+  color: white;
+  background: #2D39D6;
+  border: 1px solid #2733DB;
+}
+
+.question {
+  display: none;
+}
