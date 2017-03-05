@@ -6,8 +6,15 @@
     <script type = "text/javascript" src="content.js"></script>
 </head>
 <body>
+	Keyword Analysis: </br>
+	<form onsubmit = "return keywordAnalysis()">
+		<input type = "text" name = "sentence" id = "k_text">
+		<input type = "submit" value = "submit">
+	</form>
+
+	</br> Sentimental Analysis: </br>
 	<form onsubmit = "return sentimentAnalysis()">
-		<input type = "text" name = "sentence" id = "text">
+		<input type = "text" name = "sentence" id = "s_text">
 		<input type = "submit" value = "submit">
 	</form>
 </body>
