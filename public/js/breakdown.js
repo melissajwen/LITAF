@@ -139,10 +139,10 @@ $(function() {
             score = 0;
             reason += "The student's answer has little conceptual similarity to the teacher's answer. ";
           } else if (similarity >= 0.3 && similarity < 0.8) {
-            score = 25;
+            score = 17.5;
             reason += "The student's answer has some conceptual similarity to the teacher's answer. ";
           } else if (similarity >= 0.8) {
-            score = 50;
+            score = 35;
             reason += "The student's answer has a lot conceptual similarity to the teacher's answer. ";
           }
 

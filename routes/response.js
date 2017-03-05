@@ -21,11 +21,14 @@ router.get('/:id/breakdown/:master_key', function(req, res) {
           .exec(function(err, response) {
             if (err) res.status(500).render('error', {error: err});
             
-            if (req.params.master_key === response.assignment.master_key) {
-              res.render('response/breakdown', { response: response});
-            } else {
-              res.redirect('/assignment/' + response.assignment._id);
+            if (response != null) {
+              if (req.params.master_key === response.assignment.master_key) {
+                res.render('response/breakdown', { response: response});
+              } else {
+                res.redirect('/assignment/' + response.assignment._id);
+              }
             }
+            
           });
 })
 
