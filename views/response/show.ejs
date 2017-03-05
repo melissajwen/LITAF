@@ -5,7 +5,23 @@
 
   <body>
     <div class="container">
-      <h1>Show Assignment</h1>
+      <div class="col-md-8 col-md-offset-2">
+        <div class="page-header">
+          <h1>Student Response</h1>
+          <p class="lead">By <%= response.name %> (<%= response.email %>) | ID: <%= response.student_id %></p>
+        </div>
+
+        <div class="alert alert-info"><b>Info:</b> Check back with your teacher to see your grade</div>
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <% for(var i=0;i<response.assignment.questions.length;i++) { %>
+              <h4><%= response.assignment.questions[i].text %></h4>
+              <p><%= response.answers[i] %></p>
+            <% } %>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

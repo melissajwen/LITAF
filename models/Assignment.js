@@ -11,7 +11,6 @@ var AssignmentSchema = new mongoose.Schema({
   master_key: String
 });
 
-// Define a pre-save method for categorySchema
 AssignmentSchema.pre('save', function(next) {
   // Assign a random master key to the Prompt
   var self = this;

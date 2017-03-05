@@ -5,7 +5,68 @@
 
   <body>
     <div class="container">
-      <h1>Show Assignment -- Master</h1>
+      <div class="col-md-8 col-md-offset-2">
+        <div class="page-header">
+          <h1>Assignment: <%= assignment.title %></h1>
+          <p class="lead"><%= assignment.description %></p>
+        </div>
+
+        <div>
+          <div class="input-group">
+            <span class="input-group-addon">Share URL (Give to students)</span>
+            <input type="text" class="form-control" value="http://localhost:3001/assignment/<%= assignment._id %>">
+          </div>
+
+          <br>
+
+          <div class="input-group">
+            <span class="input-group-addon">Master URL (Keep to self)</span>
+            <input type="text" class="form-control" value="http://localhost:3001/assignment/<%= assignment._id %>/master/<%= assignment.master_key %>">
+          </div>
+        </div>
+
+        <hr>
+
+        <h2>Responses</h2>
+
+        <% if (responses.length === 0 ) { %>
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h3>No Responses!</h3>
+
+              <p class="lead">Give this assignment's share URL to students and gather responses</p>
+            </div>
+          </div>
+        <% } %>
+
+        <% for(var i=0;i<responses.length;i++) { %>
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h3><%= responses[i].name + " (" + responses[i].email + ") | ID: " + responses[i].student_id %></h3>
+
+              <hr>
+              <% for (var j=0;j<responses[i].answers.length;j++) { %>
+                <h4>Question</h4>
+                <p><%= assignment.questions[j].text %></p>
+
+                <h4>Student Answer</h4>
+                <p><%= responses[i].answers[j] %></p>
+
+                <h4>Teacher Answer</h4>
+                <p><%= assignment.questions[j].ideal_answer %></p>
+
+                <div class="alert alert-success">
+                  <h4>Breakdown</h4>
+
+                  <p>Student's answer seems good with a similarity rating of 0.804 with the teacher's answer.</p>
+                </div>
+
+                <hr>
+              <% } %>
+            </div>
+          </div>
+        <% } %>
+      </div>
     </div>
   </body>
 </html>
