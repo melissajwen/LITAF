@@ -37,14 +37,14 @@
 
   .button, #scrollbutton {
         opacity: 0.98;
-        border-radius: 10px;
+        border-radius: 5px;
         display: inline-block;
         cursor: pointer;
         color: white;
         font-size: 20px;
         padding: 13px 12px;
         text-decoration: none;
-        margin: 10px 0 0 0;
+        margin: 5px 0 0 0;
         transition: opacity 0.2s ease, background 0.2s ease;
         -webkit-transition: opacity 0.2s ease, background 0.2s ease;
       }
@@ -66,19 +66,22 @@
       .icon:hover {
           transform: scale(1.01);
       }
-  .jumbotron {
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-  }
+
+
+
   .jumbotron #linguistic {
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     white-space: nowrap; /* Keeps the content on a single line */
     position: relative;
     letter-spacing: .05em; /* Adjust as needed */
+    font-size: 50px;
+    left: 100px;
+    opacity: 0;
     animation:
         typing 1s steps(40, end),
-        blink-caret .75s step-end infinite;
+        blink-caret 1s steps(40, end);
+
+    animation-fill-mode: forwards;
     animation-delay: 1s;
     
   }
@@ -87,9 +90,13 @@
     white-space: nowrap; /* Keeps the content on a single line */
     position: relative;
     letter-spacing: .05em; /* Adjust as needed */
+    font-size: 50px;
+    left: 100px;
+    opacity: 0;
     animation:
         typing 1s steps(40, end),
-        blink-caret .75s step-end infinite;
+        blink-caret 1s steps(40, end);
+    animation-fill-mode: forwards;
     animation-delay: 1.5s;
 
   }
@@ -98,9 +105,13 @@
     white-space: nowrap; /* Keeps the content on a single line */
     position: relative;
     letter-spacing: .05em; /* Adjust as needed */
+    font-size: 50px;
+    left: 100px;
+    opacity: 0;
     animation:
         typing 1s steps(40, end),
-        blink-caret .75s step-end infinite;
+        blink-caret 1s steps(40, end);
+    animation-fill-mode: forwards;
     animation-delay: 2s;
 
   }
@@ -109,9 +120,13 @@
     white-space: nowrap; /* Keeps the content on a single line */
     position: relative;
     letter-spacing: .05em; /* Adjust as needed */
+    font-size: 50px;
+    left: 100px;
+    opacity: 0;
     animation:
         typing 1s steps(40, end),
-        blink-caret .75s step-end infinite;
+        blink-caret 1s steps(40, end);
+    animation-fill-mode: forwards;
     animation-delay: 2.8s;
 
   }
@@ -120,9 +135,13 @@
     white-space: nowrap; /* Keeps the content on a single line */
     position: relative;
     letter-spacing: .05em; /* Adjust as needed */
+    font-size: 50px;
+    left: 100px;
+    opacity: 0;
     animation:
         typing 1s steps(40, end),
-        blink-caret .75s step-end infinite;
+        blink-caret 1s steps(40, end);
+    animation-fill-mode: forwards;
     animation-delay: 3.3s;
 
   }
@@ -134,9 +153,10 @@
   }
 
   @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: orange; }
+    from {opacity: 0}
+    to {opacity: 100}
   }
+
 
       /*#nav {
         -webkit-transition: all 1.5s ease;
@@ -146,6 +166,7 @@
 <body class="text-center">
 
   <div class="jumbotron"><br><br>
+    <img id = "logo" src = "logo.png" width = "100" height = "100">
       <h1 align="left" style="margin-left:5em;">
         <div id = "linguistic"><span style="color: #5cbee8">L</span>inguistic<br></div>
       <div id = "informative"><span style="color: #5cbee8">I</span>nformative<br></div>
@@ -153,7 +174,7 @@
       <div id = "assessment"><span style="color:  #5cbee8">A</span>ssessment<br></div>
       <div id = "feature"><span style="color: #5cbee8">F</span>eature<br></div>
       </h1>
-      <br><br><div id = "scrollbutton"><img src = "bg.png" width="100"></div></br></br></br>
+      <br><br><div id = "scrollbutton"><img src = "bg.png" width="50"></div></br></br></br>
   </div>
     
   <div class="container">
@@ -180,7 +201,7 @@
 
   <div class = "jumbotron">
     <div id = startButton>
-      <button id = "button" class = "text-center btn btn-info button">Create your own assignment!</button>
+      <button id = "button" class = "text-center btn btn-info button">Create your own form!</button>
     </div>
     <script>
         document.getElementById('button').addEventListener('click', function() {
