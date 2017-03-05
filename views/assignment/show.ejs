@@ -1,26 +1,49 @@
 <!DOCTYPE html>
 
 <html>
-  <%- include("../shared/head", {title: assignment.title}); %>
+  <head>
+    <title><%= assignment.title %></title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/nice.form.css">
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
 
   <body>
-    <div class="container">
-      <h1>Show Assignment</h1>
+    <div class = "container">
+      <h1><big><%= assignment.title%></big></h1>
+      <p><big><%= assignment.description %></big></p>
 
-      <h2>Title: <%= assignment.title %></h2>
-      <p><%= assignment.description %></p>
+      <form id="target">
+        </br></br>
 
-      <% for(var i=0; i < assignment.questions.length; i++) { %>
-        <h3><%= assignment.questions[i].text %></h3>
+        <input type="text" name="name" class="question" id="name" required autocomplete="off" />
+        <label for="name"><span>Name:</span></label></br> </br></br>
 
-        <div class="form-group">
-          <label>Answer:</label>
+        <input type="text" name="studentid" class="question" id="student_id" required autocomplete="off" />
+        <label for="student_id"><span>Student ID:</span></label></br> </br></br>
 
-          <textarea class="form-control" placeholder="Your answer here..."></textarea>
-        </div>
-      <% } %>
+        <input type="text" name="email" class="question" id="email" required autocomplete="off" />
+        <label for="email"><span>Email:</span></label></br> </br></br>
 
-      <button class="btn btn-md btn-default">Submit Assignment</button>
+        <% for(var i=0;i<assignment.questions.length;i++) { %>
+        <textarea name="answer" rows="2" class="question answer" required autocomplete="off"></textarea>
+        <label for="answer"><span><%= assignment.questions[i].text %></span></label> <br> <br>
+        <% } %>
+
+        <input type="submit" value="Submit Response" /><br><br><br>
+      </form>
     </div>
+
+    <script src='/js/answer.assignment.js'></script>
   </body>
 </html>
+
+
+
+

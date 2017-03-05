@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
 
+var Assignment = require('./Assignment');
+
 var ResponseSchema = new mongoose.Schema({
   assignment: {
     type: mongoose.Schema.Types.ObjectId,

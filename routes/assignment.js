@@ -4,6 +4,8 @@ var router = express.Router();
 var Assignment = require('../models/Assignment');
 var Response = require('../models/Response');
 
+var compare = require('../analytics/compare');
+
 /* URL for creating a new assignment */
 router.get('/', function(req, res) {
   res.render('assignment/create');
@@ -40,7 +42,9 @@ router.get('/:id/master/:master_key', function(req, res) {
     if (err) res.status(500).render('error', {error: err});
     
     if (assignment.master_key === req.params.master_key) {
-      res.render('assignment/master', { assignment: assignment });
+      Response.find({'assignment': assignment._id}, function(err, responses) {
+        res.render('assignment/master', { assignment: assignment, responses: responses});
+      });
     } else {
       res.redirect('/assignment/' + assignment._id); // Redirect to standard assignment page
     }
@@ -62,7 +66,7 @@ router.post('/:id/new', function(req, res) {
 
         res.json({
           message: 'Response created succesfully',
-          answer_path: '/response/' + response._id
+          response_path: '/response/' + response._id
         });
       });
     }

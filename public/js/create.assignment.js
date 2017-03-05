@@ -55,8 +55,6 @@ $(function() {
     var title = $('.a_title').val();
     var description = $('.a_description').val();
 
-    alert(title + ' / ' + description);
-
     $.post('/assignment/create', {
       title: title,
       description: description,
