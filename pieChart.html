@@ -8,16 +8,16 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Questions', 'Keywords Correct'],
-          ['Question 1',     11],
-          ['Question 2',      2],
-          ['Question 3',  2],
+          ['Question 1', 11],
+          ['Question 2', 2],
+          ['Question 3', 2],
           ['Question 4', 2],
-          ['Question 5',    7]
+          ['Question 5', 7]
         ]);
 
         var options = {
           title: 'Your Data Analysis',
-          pieHole: 0.4,
+          pieHole: 0.9,
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
@@ -26,6 +26,6 @@
     </script>
   </head>
   <body>
-    <div id="donutchart" style="width: 900px; height: 500px;"></div>
+    <div id="donutchart" style="width: 500px; height: 500px;"></div>
   </body>
 </html>
