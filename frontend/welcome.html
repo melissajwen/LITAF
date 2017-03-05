@@ -16,6 +16,8 @@
 
             $("body").fadeIn(2000);
 
+
+
         });
         $(document).ready(function (){
             $("#scrollbutton").click(function (){
@@ -24,6 +26,8 @@
                 }, 1000);
             });
         });
+
+
 	</script>
 </head>
 <style>
@@ -62,6 +66,77 @@
       .icon:hover {
           transform: scale(1.01);
       }
+	.jumbotron {
+		overflow: hidden;
+		white-space: nowrap;
+		position: relative;
+	}
+	.jumbotron #linguistic {
+		overflow: hidden; /* Ensures the content is not revealed until the animation */
+		white-space: nowrap; /* Keeps the content on a single line */
+		position: relative;
+		letter-spacing: .05em; /* Adjust as needed */
+		animation:
+				typing 1s steps(40, end),
+				blink-caret .75s step-end infinite;
+		animation-delay: 1s;
+		
+	}
+	.jumbotron #informative {
+		overflow: hidden; /* Ensures the content is not revealed until the animation */
+		white-space: nowrap; /* Keeps the content on a single line */
+		position: relative;
+		letter-spacing: .05em; /* Adjust as needed */
+		animation:
+				typing 1s steps(40, end),
+				blink-caret .75s step-end infinite;
+		animation-delay: 1.5s;
+
+	}
+	.jumbotron #telecommunicational {
+		overflow: hidden; /* Ensures the content is not revealed until the animation */
+		white-space: nowrap; /* Keeps the content on a single line */
+		position: relative;
+		letter-spacing: .05em; /* Adjust as needed */
+		animation:
+				typing 1s steps(40, end),
+				blink-caret .75s step-end infinite;
+		animation-delay: 2s;
+
+	}
+	.jumbotron #assessment {
+		overflow: hidden; /* Ensures the content is not revealed until the animation */
+		white-space: nowrap; /* Keeps the content on a single line */
+		position: relative;
+		letter-spacing: .05em; /* Adjust as needed */
+		animation:
+				typing 1s steps(40, end),
+				blink-caret .75s step-end infinite;
+		animation-delay: 2.8s;
+
+	}
+	.jumbotron #feature {
+		overflow: hidden; /* Ensures the content is not revealed until the animation */
+		white-space: nowrap; /* Keeps the content on a single line */
+		position: relative;
+		letter-spacing: .05em; /* Adjust as needed */
+		animation:
+				typing 1s steps(40, end),
+				blink-caret .75s step-end infinite;
+		animation-delay: 3.3s;
+
+	}
+
+	/* The typing effect */
+	@keyframes typing {
+		from { width: 0 }
+		to { width: 100% }
+	}
+
+	@keyframes blink-caret {
+		from, to { border-color: transparent }
+		50% { border-color: orange; }
+	}
 
       /*#nav {
       	-webkit-transition: all 1.5s ease;
@@ -72,11 +147,11 @@
 
 	<div class="jumbotron"><br><br>
 	  	<h1 align="left" style="margin-left:5em;">
-	  		<span style="color: #5cbee8">L</span>inguistic<br>
-	  		<span style="color: #5cbee8">I</span>nformative<br>
-	  		<span style="color: #5cbee8">T</span>elecommunicational<br>
-	  		<span style="color:	#5cbee8">A</span>ssessment<br>
-	  		<span style="color: #5cbee8">F</span>eature<br>
+	  		<div id = "linguistic"><span style="color: #5cbee8">L</span>inguistic<br></div>
+			<div id = "informative"><span style="color: #5cbee8">I</span>nformative<br></div>
+			<div id = "telecommunicational"><span style="color: #5cbee8">T</span>elecommunicational<br></div>
+			<div id = "assessment"><span style="color:	#5cbee8">A</span>ssessment<br></div>
+			<div id = "feature"><span style="color: #5cbee8">F</span>eature<br></div>
 	  	</h1>
 	  	<br><br><div id = "scrollbutton"><img src = "bg.png" width="100"></div></br></br></br>
 	</div>
@@ -115,6 +190,8 @@
                     window.location = linkLocation;
                 });
             });
+
+
 		</script>
 	</div>
 
