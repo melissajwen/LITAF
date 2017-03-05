@@ -2,6 +2,7 @@
 // input: N/A, called when submit button on html file is pressed
 // output: array of keywords generated from inputted text
 var score;
+var keyPhrases;
 
 function keywordAnalysis() { 
     var _data = {
