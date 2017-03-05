@@ -16,15 +16,6 @@
 
             $("body").fadeIn(2000);
 
-            $(".text-center btn btn-info button").click(function(event){
-                event.preventDefault();
-                linkLocation = this.href;
-                $("body").fadeOut(1000, redirectPage);
-            });
-
-            function redirectPage() {
-                window.location = linkLocation;
-            }
         });
         $(document).ready(function (){
             $("#scrollbutton").click(function (){
@@ -118,10 +109,12 @@
 		</div>
 		<script>
 		    document.getElementById('button').addEventListener('click', function() {
-		    	setTimeout(function() {
-		    		window.location.href = "master_form.html";
-		    	}, 0);
-		    });
+                event.preventDefault();
+                linkLocation = "master_form.html";
+                $("body").fadeOut(1000, function() {
+                    window.location = linkLocation;
+                });
+            });
 		</script>
 	</div>
 
