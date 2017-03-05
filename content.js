@@ -88,7 +88,7 @@ function compareKeywords(userArray, teacherArray){
         newWords: newWords,
         newWordCount: newWordCount,
         matchedWords: matchedWords,
-        matchedWordCount: matchedWordCount
+        matchedWordCount: matchedWordCount,
         percentageMatched: percentageMatched
     };
 }
@@ -118,4 +118,4 @@ function compare(teacherInput) {
         .fail(function() {
             alert("error");
         });
-});
+};
