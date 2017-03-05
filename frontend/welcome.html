@@ -76,9 +76,12 @@
 		letter-spacing: .05em; /* Adjust as needed */
 		font-size: 50px;
 		left: 100px;
+		opacity: 0;
 		animation:
 				typing 1s steps(40, end),
-				blink-caret .75s step-end infinite;
+				blink-caret 1s steps(40, end);
+
+		animation-fill-mode: forwards;
 		animation-delay: 1s;
 		
 	}
@@ -89,9 +92,11 @@
 		letter-spacing: .05em; /* Adjust as needed */
 		font-size: 50px;
 		left: 100px;
+		opacity: 0;
 		animation:
 				typing 1s steps(40, end),
-				blink-caret .75s step-end infinite;
+				blink-caret 1s steps(40, end);
+		animation-fill-mode: forwards;
 		animation-delay: 1.5s;
 
 	}
@@ -102,9 +107,11 @@
 		letter-spacing: .05em; /* Adjust as needed */
 		font-size: 50px;
 		left: 100px;
+		opacity: 0;
 		animation:
 				typing 1s steps(40, end),
-				blink-caret .75s step-end infinite;
+				blink-caret 1s steps(40, end);
+		animation-fill-mode: forwards;
 		animation-delay: 2s;
 
 	}
@@ -115,9 +122,11 @@
 		letter-spacing: .05em; /* Adjust as needed */
 		font-size: 50px;
 		left: 100px;
+		opacity: 0;
 		animation:
 				typing 1s steps(40, end),
-				blink-caret .75s step-end infinite;
+				blink-caret 1s steps(40, end);
+		animation-fill-mode: forwards;
 		animation-delay: 2.8s;
 
 	}
@@ -128,9 +137,11 @@
 		letter-spacing: .05em; /* Adjust as needed */
 		font-size: 50px;
 		left: 100px;
+		opacity: 0;
 		animation:
 				typing 1s steps(40, end),
-				blink-caret .75s step-end infinite;
+				blink-caret 1s steps(40, end);
+		animation-fill-mode: forwards;
 		animation-delay: 3.3s;
 
 	}
@@ -142,8 +153,8 @@
 	}
 
 	@keyframes blink-caret {
-		from, to { border-color: transparent }
-		50% { border-color: orange; }
+		from {opacity: 0}
+		to {opacity: 100}
 	}
 
 
