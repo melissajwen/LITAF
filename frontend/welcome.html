@@ -11,6 +11,21 @@
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="jquery.localscroll.js" type="text/javascript"></script>
 	<script>
+        $(document).ready(function() {
+            $("body").css("display", "none");
+
+            $("body").fadeIn(2000);
+
+            $(".text-center btn btn-info button").click(function(event){
+                event.preventDefault();
+                linkLocation = this.href;
+                $("body").fadeOut(1000, redirectPage);
+            });
+
+            function redirectPage() {
+                window.location = linkLocation;
+            }
+        });
         $(document).ready(function (){
             $("#scrollbutton").click(function (){
                 $('html, body').animate({
@@ -104,7 +119,7 @@
 		<script>
 		    document.getElementById('button').addEventListener('click', function() {
 		    	setTimeout(function() {
-		    		window.location.href = "masterform.html";
+		    		window.location.href = "master_form.html";
 		    	}, 0);
 		    });
 		</script>
