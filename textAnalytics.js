@@ -60,3 +60,30 @@ function finalScoreSentiment(arrayOfSentiments){
     }
 
 }
+
+function compare(teacherInput) {
+
+    var params = {
+        // Request parameters
+        "s1": $("#text").val(),
+        "s2": teacherInput,
+    };
+
+    $.ajax({
+        url: "https://westus.api.cognitive.microsoft.com/academic/v1.0/similarity?" + "s1=" + params.s1 + "&s2=" + params.s2,
+        headers: {
+            "Ocp-Apim-Subscription-Key": "963f6c662dc347279cf7d8e11f08ec1b",
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        type: "GET",
+        // Request body
+        data: {body},
+    })
+        .done(function(data) {
+            return data;
+        })
+        .fail(function() {
+            alert("error");
+        });
+});
