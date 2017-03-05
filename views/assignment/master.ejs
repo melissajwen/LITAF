@@ -14,14 +14,14 @@
         <div>
           <div class="input-group">
             <span class="input-group-addon">Share URL (Give to students)</span>
-            <input type="text" class="form-control" value="http://localhost:3001/assignment/<%= assignment._id %>">
+            <input type="text" class="form-control" value="http://itslitaf.com/assignment/<%= assignment._id %>">
           </div>
 
           <br>
 
           <div class="input-group">
             <span class="input-group-addon">Master URL (Keep to self)</span>
-            <input type="text" class="form-control" value="http://localhost:3001/assignment/<%= assignment._id %>/master/<%= assignment.master_key %>">
+            <input type="text" class="form-control" value="http://itslitaf.com/assignment/<%= assignment._id %>/master/<%= assignment.master_key %>">
           </div>
         </div>
 
@@ -54,15 +54,12 @@
 
                 <h4>Teacher Answer</h4>
                 <p><%= assignment.questions[j].ideal_answer %></p>
-
-                <div class="alert alert-success">
-                  <h4>Breakdown</h4>
-
-                  <p>Student's answer seems good with a similarity rating of 0.804 with the teacher's answer.</p>
-                </div>
-
                 <hr>
               <% } %>
+            </div>
+
+            <div class="panel-footer text-right">
+              <a class="btn btn-md btn-success" href="/response/<%= responses[i]._id %>/breakdown/<%= assignment.master_key %>" target="_blank">Analyze Response</a>
             </div>
           </div>
         <% } %>

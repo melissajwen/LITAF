@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+  <%- include("../shared/head", {title: "Response by " + response.name}); %>
+
+  <body>
+    <div class="container">
+      <div class="col-md-8 col-md-offset-2">
+
+        <div class="page-header">
+          <h1>Student Response Analytics</h1>
+          <p class="lead">By <%= response.name %> (<%= response.email %>) | ID: <%= response.student_id %></p>
+        </div>
+        
+        <% for(var i=0;i<response.assignment.questions.length;i++) { %>
+          <div class="panel panel-default response-question">
+            <div class="panel-heading">
+              <h4><%= response.assignment.questions[i].text %></h4>
+            </div>
+
+            <div class="panel-body">
+              <h4>Student Answer</h4>
+              <p class="student-answer"><%= response.answers[i] %></p>
+
+              <h4>Teacher Answer</h4>
+              <p class="teacher-answer"><%= response.assignment.questions[i].ideal_answer %></p>
+
+              <hr>
+
+              <h4>Similarity: <span class="similarity"></span></h4>
+
+              <h4>Student Key Phrases:</h4>
+              <p class="student-keyphrases"></p>
+
+              <h4>Teacher Key Phrases:</h4>
+              <p class="teacher-keyphrases"></p>
+
+              <h4>Matching Key Phrases:</h4>
+              <p class="matching-keyphrases"></p>
+
+              <div class="alert alert-info">
+                <h4>Summary</h4>
+
+                <p class="summary"></p>
+              </div>
+            </div>
+          </div>
+        <% } %>
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/breakdown.js"></script>
+  </body>
+</html>
