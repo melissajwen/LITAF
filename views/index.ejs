@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+  <%- include("./shared/head", {title: "Easy Grader"}); %>
+
+  <body>
+    <div class="jumbotron">
+      <div class="container text-center">
+        <h1>Welcome to Easy Grader</h1>
+        <p>Grading made simple.</p>
+      </div>
+    </div>
+
+    <section class="welcome">
+      <div class="container">
+        <h2 class="text-center">What we can do for you.</h2>
+
+        <br><br>
+
+        <div class="row">
+          <div class="col-sm-4 text-center">
+            <span class="welcome-icon"><i class="glyphicon glyphicon-ok" style="font-size:150%;"></i></span>
+            <h3>Simple and Comprehensive.</h3>
+            <p>Create an assignment and distribute it to your students, friends, etc.</p>
+          </div>
+
+          <div class="col-sm-4 text-center">
+            <span class="welcome-icon"><i class="glyphicon glyphicon-signal welcome-icon" style="font-size:150%;"></i></span>
+            <h3>Precision Analytics</h3>
+            <p>Developed with Microsoft's Text Analytics API, our algorithm ensures you receive accurate and consistent grading all around.</p>
+          </div>
+
+          <div class="col-sm-4 text-center">
+            <span class="welcome-icon"><i class="glyphicon glyphicon-heart welcome-icon" style="font-size:150%;"></i></span>
+            <h3>Get Feedback That Matters to You.</h3>        
+            <p>Anayze the emotions and reactions of your audience as they respond.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="jumbotron text-center cta">
+      <div id="startButton">
+        <h1 class="text-center">Get Started!</h1>
+
+        <br>
+
+        <a class="text-center btn btn-info btn-cta" href="/assignment">Create Assignment</a>
+      </div>
+    </div>
+  </body>
+</html>

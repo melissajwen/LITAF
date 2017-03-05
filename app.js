@@ -20,21 +20,21 @@ app.set('port', (process.env.PORT || 3001));
 
 /* View Engine */
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+app.set('view engine', 'ejs');
 
 /* Middleware setup */
 app.use(express.static(path.join(__dirname, 'public'))); // Static file serving
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 /* Import routes */
 var index = require('./routes/index');
-var prompt = require('./routes/prompt');
-var answer = require('./routes/answer');
+var assignment = require('./routes/assignment');
+var response = require('./routes/response');
 
 app.use('/', index);
-app.use('/prompt', prompt);
-app.use('/answer', answer);
+app.use('/assignment', assignment);
+app.use('/response', response);
 
 /* Error Handler */
 app.use(function(err, req, res, next) {

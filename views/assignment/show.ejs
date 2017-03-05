@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+  <%- include("../shared/head", {title: assignment.title}); %>
+
+  <body>
+    <div class="container">
+      <h1>Show Assignment</h1>
+
+      <h2>Title: <%= assignment.title %></h2>
+      <p><%= assignment.description %></p>
+
+      <% for(var i=0; i < assignment.questions.length; i++) { %>
+        <h3><%= assignment.questions[i].text %></h3>
+
+        <div class="form-group">
+          <label>Answer:</label>
+
+          <textarea class="form-control" placeholder="Your answer here..."></textarea>
+        </div>
+      <% } %>
+
+      <button class="btn btn-md btn-default">Submit Assignment</button>
+    </div>
+  </body>
+</html>
