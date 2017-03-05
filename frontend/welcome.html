@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Welcome to TextGrader!</title>
+	<title>Welcome to LITAF!</title>
   	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -31,7 +31,7 @@
 	}
 
 	.button {
-        opacity: 0.96;
+        opacity: 0.98;
         border-radius: 10px;
         display: inline-block;
         cursor: pointer;
@@ -39,13 +39,20 @@
         font-size: 20px;
         padding: 13px 12px;
         text-decoration: none;
-        transition: all 0.3s ease-in-out;
+        margin: 10px 0 0 0;
+        transition: opacity 0.2s ease, background 0.2s ease;
+        -webkit-transition: opacity 0.2s ease, background 0.2s ease;
       }
 
       .button:hover {
           transform: scale(1.01);
           color: white;
       }
+
+      .button:active {
+      	background: #999;
+      }
+
       .icon {
         cursor: pointer;
         transition: all 0.3s ease-in-out;
@@ -62,36 +69,35 @@
 </style>
 <body class="text-center">
 
-	<div class="jumbotron"></br></br></br></br>
+	<div class="jumbotron"><br><br>
 		<!-- <h1><big><big>Welcome to litAF.</big></big></h1></br></br>
 	  	<p><big><big>Grading made simple.</big></big></p> </br></br></br></br> -->
-	  	<h1 align="left"><span style="color: #5cbee8">L</span>inguistic<br><span style="color: #5cbee8">I</span>
-	  	nformative<br><span style="color: #5cbee8">T</span>elecommunicational<br><span style="color:
-	  	 #5cbee8">A</span>ssessment<br><span style="color: #5cbee8">F</span>eature<br></h1>
-	  	<a href="#overview"><img src = "bg.png" width="100"></a></br></br></br></br></br>
-	</div>
-
-	<div class = "jumbotron">
-		<h2 id = "overview"><big>Overview</big></h2></a>
-		<p></p>
+	  	<h1 align="left" style="margin-left:5em;">
+	  		<span style="color: #5cbee8">L</span>inguistic<br>
+	  		<span style="color: #5cbee8">I</span>nformative<br>
+	  		<span style="color: #5cbee8">T</span>elecommunicational<br>
+	  		<span style="color:	#5cbee8">A</span>ssessment<br>
+	  		<span style="color: #5cbee8">F</span>eature<br>
+	  	</h1>
+	  	<br><br><a href="#overview"><img src = "bg.png" width="80"></a></br></br></br>
 	</div>
 	  
 	<div class="container">
-		<h2><big>What we can do for you.</big></h2></br></br>
+		<h2 id ="overview"><big><big>What we can do for you.</big></big></h2></br></br>
 		<div class="row">
 	    	<div class="col-sm-4">
-	    		<span class="glyphicon glyphicon-ok" style="font-size:150%;"></span>
+	    		<span class="glyphicon glyphicon-ok" style="font-size:170%;"></span>
 		      	<h3>Simple and comprehensive.</h3>
-		      	<p>Create a form and send to your audience. Thats it.</p>
+		      	<p>Create a form and send to your audience. That's it.</p>
 		    </div>
 		    <div class="col-sm-4">
-		    	<span class="glyphicon glyphicon-signal" style="font-size:150%;"></span>
+		    	<span class="glyphicon glyphicon-signal" style="font-size:170%;"></span>
 		      	<h3>Precise analytics. </h3>
 		      	<p>Developed with Microsoft technologies, our algorithm 
-		      	ensures you receive accurate and consistent grading all around.</p>
+		      	ensures you receive accurate and consistent feedback all around.</p>
 		    </div>
 		    <div class="col-sm-4">
-		    	<span class="glyphicon glyphicon-heart" style="font-size:150%;"></span>
+		    	<span class="glyphicon glyphicon-heart" style="font-size:170%;"></span>
 		      	<h3>Get feedback that matters.</h3>        
 		      	<p>Analyze the emotions and reactions of your audience as they respond.</p>
 		    </div>
@@ -100,7 +106,7 @@
 
 	<div class = "jumbotron">
 		<div id = startButton>
-			</br><button id = "button" class = "text-center btn btn-info button">Create your own form!</button>
+			<button id = "button" class = "text-center btn btn-info button">Create your own form!</button>
 		</div>
 		<script>
 		    document.getElementById('button').addEventListener('click', function() {
